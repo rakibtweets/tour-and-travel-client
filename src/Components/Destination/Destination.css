@@ -1,0 +1,14 @@
+.destination-card {
+  position: relative;
+  height: auto;
+}
+.country-img {
+  position: relative;
+  border-radius: 50%;
+  top: -3em;
+  left: 1em;
+}
+.destination-body {
+  position: relative;
+  top: -3em;
+}
