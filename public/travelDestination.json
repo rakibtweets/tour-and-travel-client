@@ -1,6 +1,6 @@
 [
   {
-    "PlaceName": "İstanbul",
+    "placeName": "İstanbul",
     "country": "Turkey",
     "placeDescription": "Istanbul is a major city in Turkey that straddles Europe and Asia across the Bosphorus Strait. Its Old City reflects cultural influences of the many empires that once ruled here. In the Sultanahmet district, the open-air, Roman-era Hippodrome was for centuries the site of chariot races, and Egyptian obelisks also remain.",
     "placeImg": "https://lavella.hellodigi.ru/img/prevnap3.jpg",
@@ -9,7 +9,7 @@
     "pricing": "$ 5500"
   },
   {
-    "PlaceName": "Rio de Janeiro",
+    "placeName": "Rio de Janeiro",
     "country": "Brazil",
     "placeDescription": "Rio de Janeiro is a huge seaside city in Brazil, famed for its Copacabana and Ipanema beaches, 38m Christ the Redeemer statue atop Mount Corcovado and for Sugarloaf Mountain, a granite peak with cable cars to its summit. The city is also known for its sprawling favelas (shanty towns).",
     "placeImg": "https://lavella.hellodigi.ru/img/prevnap4.jpg",
@@ -18,7 +18,7 @@
     "pricing": "$ 4500"
   },
   {
-    "PlaceName": "New York City",
+    "placeName": "New York City",
     "country": "America",
     "placeDescription": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.",
     "placeImg": "https://lavella.hellodigi.ru/img/prevnap1.jpg",
@@ -27,7 +27,7 @@
     "pricing": "$ 7500"
   },
   {
-    "PlaceName": "Moscow",
+    "placeName": "Moscow",
     "country": "Russia",
     "placeDescription": "Moscow, on the Moskva River in western Russia, is the nation’s cosmopolitan capital. In its historic core is the Kremlin, a complex that’s home to the president and tsarist treasures in the Armoury. Outside its walls is Red Square, Russia's symbolic center. It's home to Lenin’s Mausoleum, the State Historical Museum's",
     "placeImg": "https://lavella.hellodigi.ru/img/prevnap9.jpg",
@@ -36,7 +36,7 @@
     "pricing": "$ 4999"
   },
   {
-    "PlaceName": "London",
+    "placeName": "London",
     "country": "England",
     "placeDescription": "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. ",
     "placeImg": "https://lavella.hellodigi.ru/img/prevnap6.jpg",
@@ -45,7 +45,7 @@
     "pricing": "$ 6999"
   },
   {
-    "PlaceName": "Great Pyramids of Giza",
+    "placeName": "Great Pyramids of Giza",
     "country": "Egypt",
     "placeDescription": "Egypt is very famous for its ancient civilization and the monuments of the majestic pharaohs, such as the Great Pyramids of Giza, the Great Sphinx, the Egyptian Museum, the GEM (The Grand Egyptian Museum), Sakkara, and Dahshur. ",
     "placeImg": "https://lavella.hellodigi.ru/img/prevnap2.jpg",

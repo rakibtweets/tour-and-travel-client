@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Destination.css';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);
   useEffect(() => {
-    fetch('/travelDestination.json')
+    fetch('http://localhost:5000/destinations')
       .then((res) => res.json())
       .then((data) => setDestinations(data));
   }, []);
@@ -16,7 +17,7 @@ const Destination = () => {
       <Container>
         <Row xs={1} md={3} lg={3} className=" g-3">
           {destinations.map((destination) => (
-            <Col key={destination?.PlaceName}>
+            <Col key={destination?._id}>
               <Card className="destination-card">
                 <Card.Img
                   className=" img-fluid"
@@ -28,21 +29,33 @@ const Destination = () => {
                   src={destination?.countryImg}
                   alt=""
                 />
-                <Card.Body className=" destination-body">
+                <Card.Body className="">
                   <h3 className="text-primary fw-bloder">
-                    {destination?.PlaceName}
+                    {destination?.placeName}
                   </h3>
                   <p className=" text-secondary">
-                    {destination?.placeDescription.slice(0, 150)}
+                    {destination?.placeDescription.slice(0, 120)}
                   </p>
                   <div className=" d-flex justify-content-between text-secondary fw-bold">
-                    <h5>{destination?.travelDuration}</h5>
-                    <h4>{destination?.pricing}</h4>
+                    <h5>{destination?.travelDuration} days</h5>
+                    <h5>$ {destination?.pricing}</h5>
                   </div>
                 </Card.Body>
-                <Button className=" destination-body" variant="primary">
-                  Buy Now
-                </Button>
+                <div className="d-flex justify-content-around my-3">
+                  <Link to={`/destinations/${destination?._id}`}>
+                    <Button className=" destination-body" variant="success">
+                      Details
+                    </Button>
+                  </Link>
+                  <Link to="/booking">
+                    <Button
+                      className=" destination-body"
+                      variant="outline-primary"
+                    >
+                      Book Now
+                    </Button>
+                  </Link>
+                </div>
               </Card>
             </Col>
           ))}

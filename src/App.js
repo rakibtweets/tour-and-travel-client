@@ -7,6 +7,10 @@ import Home from './Components/Home/Home';
 import Destination from './Components/Destination/Destination';
 import Contact from './Components/Contact/Contact';
 import AuthProvider from './Context/AuthProvider';
+import AddDestionation from './Components/AddDestination/AddDestionation';
+import TourDetails from './TourDetails/TourDetails';
+import Booking from './Components/Booking/Booking';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -24,6 +28,15 @@ function App() {
             <Route path="/destination">
               <Destination />
             </Route>
+            <Route path="/addDestination">
+              <AddDestionation />
+            </Route>
+            <Route path="/destinations/:id">
+              <TourDetails />
+            </Route>
+            <PrivateRoute path="/booking">
+              <Booking />
+            </PrivateRoute>
             <Route path="/contact">
               <Contact />
             </Route>

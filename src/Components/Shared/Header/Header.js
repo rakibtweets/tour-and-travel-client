@@ -15,7 +15,7 @@ const Header = () => {
         bg="dark"
         variant="dark"
       >
-        <Container>
+        <Container fluid>
           <Nav.Link as={Link} to="/home" className="fw-bold h4 text-white">
             Tour And Travel
           </Nav.Link>
@@ -33,6 +33,12 @@ const Header = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/manageTours">
                 Mange All Tour
+              </Nav.Link>
+              <Nav.Link as={Link} to="/addDestination">
+                Add Destination
+              </Nav.Link>
+              <Nav.Link as={Link} to="/booking">
+                Booking
               </Nav.Link>
               <Nav.Link as={Link} to="/contact">
                 Contact
