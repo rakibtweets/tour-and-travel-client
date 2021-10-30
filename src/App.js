@@ -14,6 +14,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import TourList from './Components/TourList/TourList';
 import ManageAllTours from './Components/ManageAllTours/ManageAllTours';
 import NotFound from './Components/NotFound/NotFound';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>

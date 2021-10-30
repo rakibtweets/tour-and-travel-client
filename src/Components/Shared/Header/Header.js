@@ -16,7 +16,7 @@ const Header = () => {
         variant="dark"
       >
         <Container fluid>
-          <Nav.Link as={Link} to="/home" className="fw-bold h4 text-white">
+          <Nav.Link as={Link} to="/home" className="fw-bold h4 text-success">
             Tour And Travel
           </Nav.Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
