@@ -4,7 +4,6 @@ import useAuth from '../../Hooks/useAuth';
 
 const TourList = () => {
   const [bookingLists, setBookingLists] = useState([]);
-  // const [isDeleted, setIsDeleted] = useState(false);
   const { user } = useAuth();
   useEffect(() => {
     fetch(`http://localhost:5000/myBookingList/${user.email}`)
