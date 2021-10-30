@@ -44,7 +44,7 @@ const TourList = () => {
 
       <Container>
         <Table striped bordered hover responsive variant="light">
-          <thead>
+          <thead className="text-center">
             <tr>
               <th>#</th>
               <th>Name</th>
@@ -65,7 +65,7 @@ const TourList = () => {
                 <td>{bookList?.address}</td>
                 <td>{bookList?.bookingDate}</td>
                 <td>{bookList?.packeInfo.placeName}</td>
-                <td>$ {bookList?.packeInfo.pricing}</td>
+                <td className=" fw-bold">$ {bookList?.packeInfo.pricing}</td>
                 <td className="text-danger">
                   {bookList?.status}{' '}
                   <button

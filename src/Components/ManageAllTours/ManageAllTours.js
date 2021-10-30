@@ -3,6 +3,7 @@ import { Container, Table } from 'react-bootstrap';
 
 const ManageAllTours = () => {
   const [bookings, setBookings] = useState([]);
+  const [isUpdated, setIsUpdated] = useState(false);
   useEffect(() => {
     fetch('http://localhost:5000/managleAllBooking')
       .then((res) => res.json())
@@ -10,11 +11,10 @@ const ManageAllTours = () => {
         console.log(data);
         setBookings(data);
       });
-  }, []);
+  }, [isUpdated]);
 
   // handle Deleting bookings
   const handleCancelBooking = (id) => {
-    console.log('~ id', id);
     const proceed = window.confirm('Are you sure, You want to delete?');
     if (proceed) {
       fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
@@ -34,6 +34,28 @@ const ManageAllTours = () => {
           }
         });
     }
+  };
+
+  //handle Approve Booking
+  const handleApproveBooking = (id) => {
+    const updatedBooking = bookings.find((bookList) => bookList._id === id);
+    // console.log('~ updatedBooking', (updatedBooking.status = 'Approved'));
+    updatedBooking.status = 'Approved';
+
+    fetch(`http://localhost:5000/managleAllBooking/${id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updatedBooking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert('Your booking has been approved successfully');
+          setIsUpdated(true);
+        }
+      });
   };
   return (
     <div>
@@ -69,10 +91,16 @@ const ManageAllTours = () => {
                 <td className="text-danger">
                   {bookList?.status}{' '}
                   <button
-                    onClick={() => handleCancelBooking(bookList?._id)}
-                    className="btn bg-danger p-2"
+                    onClick={() => handleApproveBooking(bookList?._id, index)}
+                    className="btn btn-success p-2 text-white fw-bold"
                   >
-                    Cancel
+                    Approve
+                  </button>
+                  <button
+                    onClick={() => handleCancelBooking(bookList?._id)}
+                    className="btn bg-danger py-2 px-3 text-white fw-bold"
+                  >
+                    x
                   </button>
                 </td>
               </tr>
