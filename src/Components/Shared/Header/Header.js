@@ -61,7 +61,7 @@ const Header = () => {
 
                 <Nav.Link
                   onClick={userSignOut}
-                  className="bg-danger rounded-pill px-3"
+                  className="bg-danger rounded-pill px-4"
                 >
                   Log Out
                 </Nav.Link>

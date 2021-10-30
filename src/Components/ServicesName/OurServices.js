@@ -13,7 +13,7 @@ const OurServices = () => {
       </h2>
       <Container>
         <Row xs={1} md={2} lg={4} className="g-4">
-          <Col>
+          <Col className="d-block d-lg-flex">
             <div className="card text-center">
               <div className="card-icon mt-3">
                 <FaPlane size="5.5em" className="icon text-primary p-3" />
@@ -27,7 +27,7 @@ const OurServices = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col className="d-block d-lg-flex">
             <div className="card text-center">
               <div className="card-icon mt-3">
                 <GiSailboat size="5.5em" className="icon text-primary p-3" />
@@ -41,7 +41,7 @@ const OurServices = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col className="d-block d-lg-flex">
             <div className="card text-center">
               <div className="card-icon mt-3">
                 <FaHotel size="5.5em" className="icon text-primary p-3" />
@@ -55,7 +55,7 @@ const OurServices = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col className="d-block d-lg-flex">
             <div className="card text-center">
               <div className="card-icon mt-3">
                 <SiBookstack size="5.5em" className="icon text-primary p-3" />

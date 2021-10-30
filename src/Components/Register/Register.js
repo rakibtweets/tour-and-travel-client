@@ -1,10 +1,11 @@
 import React from 'react';
-import { useLocation, useHistory, Link } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
-import './Login.css';
 import { FcGoogle } from 'react-icons/fc';
+import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+import './Register.css';
 
-const Login = () => {
+const Register = () => {
   const { signWithGoogle, setUser, setError } = useAuth();
   const location = useLocation();
   const history = useHistory();
@@ -23,10 +24,10 @@ const Login = () => {
       });
   };
   return (
-    <div className="text-center loging-container">
+    <div className="text-center">
       <div className="login-section mx-auto">
         <div className=" d-flex flex-column justify-content-center align-items-center h-75">
-          <h3 className="fw-bold ">Account Login</h3>
+          <h4 className="fw-bold ">Create Account With Google</h4>
           <button
             onClick={handleSignWitGoogle}
             className=" btn my-3 mx-auto media-icon"
@@ -34,7 +35,7 @@ const Login = () => {
             <FcGoogle className="fs-3 me-2" /> Sign In With Google
           </button>
           <p>
-            Don't have an account? <Link to="/register">Create an Account</Link>
+            All ready have an account? <Link to="/login">Please Login</Link>
           </p>
         </div>
       </div>
@@ -42,4 +43,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

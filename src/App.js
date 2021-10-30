@@ -15,6 +15,7 @@ import TourList from './Components/TourList/TourList';
 import ManageAllTours from './Components/ManageAllTours/ManageAllTours';
 import NotFound from './Components/NotFound/NotFound';
 import Footer from './Components/Footer/Footer';
+import Register from './Components/Register/Register';
 
 function App() {
   return (
@@ -52,6 +53,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
             </Route>
             <Route path="*">
               <NotFound />
