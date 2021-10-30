@@ -4,6 +4,7 @@ import { Container, Table } from 'react-bootstrap';
 const ManageAllTours = () => {
   const [bookings, setBookings] = useState([]);
   const [isUpdated, setIsUpdated] = useState(false);
+  // const [status, setStatus] = useState(false);
   useEffect(() => {
     fetch('http://localhost:5000/managleAllBooking')
       .then((res) => res.json())
@@ -38,8 +39,8 @@ const ManageAllTours = () => {
 
   //handle Approve Booking
   const handleApproveBooking = (id) => {
+    setIsUpdated(false);
     const updatedBooking = bookings.find((bookList) => bookList._id === id);
-    // console.log('~ updatedBooking', (updatedBooking.status = 'Approved'));
     updatedBooking.status = 'Approved';
 
     fetch(`http://localhost:5000/managleAllBooking/${id}`, {
@@ -54,6 +55,7 @@ const ManageAllTours = () => {
         if (data.modifiedCount > 0) {
           alert('Your booking has been approved successfully');
           setIsUpdated(true);
+          // setStatus(true);
         }
       });
   };
@@ -88,8 +90,16 @@ const ManageAllTours = () => {
                 <td>{bookList?.bookingDate}</td>
                 <td>{bookList?.packeInfo.placeName}</td>
                 <td>$ {bookList?.packeInfo.pricing}</td>
-                <td className="text-danger">
-                  {bookList?.status}{' '}
+                <td className="d-flex justify-content-center gap-2">
+                  <p
+                    className={
+                      bookList?.status === 'Pending'
+                        ? 'text-danger'
+                        : 'text-success fw-bold'
+                    }
+                  >
+                    {bookList?.status}
+                  </p>
                   <button
                     onClick={() => handleApproveBooking(bookList?._id, index)}
                     className="btn btn-success p-2 text-white fw-bold"

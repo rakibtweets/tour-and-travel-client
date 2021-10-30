@@ -66,8 +66,16 @@ const TourList = () => {
                 <td>{bookList?.bookingDate}</td>
                 <td>{bookList?.packeInfo.placeName}</td>
                 <td className=" fw-bold">$ {bookList?.packeInfo.pricing}</td>
-                <td className="text-danger">
-                  {bookList?.status}{' '}
+                <td className=" d-flex justify-content-center align-items-center gap-3">
+                  <p
+                    className={
+                      bookList?.status === 'Pending'
+                        ? 'text-danger'
+                        : 'text-success fw-bold'
+                    }
+                  >
+                    {bookList?.status}
+                  </p>
                   <button
                     onClick={() => handleCancelBooking(bookList?._id)}
                     className="btn bg-danger p-2"

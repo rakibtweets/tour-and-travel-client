@@ -15,9 +15,9 @@ const Destination = () => {
       <h2 className=" text-center my-4">Explore Tour by Destination</h2>
 
       <Container>
-        <Row xs={1} md={3} lg={3} className=" g-3">
+        <Row xs={1} md={3} lg={3} className=" g-4">
           {destinations.map((destination) => (
-            <Col key={destination?._id}>
+            <Col key={destination?._id} className=" d-flex">
               <Card className="destination-card">
                 <Card.Img
                   className=" img-fluid"
@@ -25,23 +25,24 @@ const Destination = () => {
                   src={destination?.placeImg}
                 />
                 <img
-                  className="w-25 country-img img-fluid"
+                  className="country-img img-fluid text-end"
                   src={destination?.countryImg}
                   alt=""
                 />
-                <Card.Body className="">
-                  <h3 className="text-primary fw-bloder">
+
+                <Card.Body className="body-card">
+                  <h5 className="text-success fw-bloder">
                     {destination?.placeName}
-                  </h3>
-                  <p className=" text-secondary">
+                  </h5>
+                  <p className=" text-secondary p-0">
                     {destination?.placeDescription.slice(0, 120)}
                   </p>
-                  <div className=" d-flex justify-content-between text-secondary fw-bold">
+                  <div className=" d-flex justify-content-between text-success fw-bold">
                     <h5>{destination?.travelDuration} days</h5>
                     <h5>$ {destination?.pricing}</h5>
                   </div>
                 </Card.Body>
-                <div className="d-flex justify-content-around my-3">
+                <div className="d-flex justify-content-around body-card">
                   <Link to={`/destinations/${destination?._id}`}>
                     <Button className=" destination-body" variant="success">
                       Details
@@ -50,7 +51,7 @@ const Destination = () => {
                   <Link to={`/booking/${destination?._id}`}>
                     <Button
                       className=" destination-body"
-                      variant="outline-primary"
+                      variant="outline-success"
                     >
                       Book Now
                     </Button>

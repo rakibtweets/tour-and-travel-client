@@ -1,10 +1,16 @@
-.destination-card {
-  position: relative;
-}
 .country-img {
+  width: 50px;
+  height: 50px;
   position: relative;
   border-radius: 50%;
-  top: -3em;
-  left: 1em;
+  top: -2em;
+  left: 1.2em;
 }
-
+.destination-card {
+  box-shadow: 0px 0px 7px 0px rgba(128, 128, 128, 0.5);
+}
+.body-card {
+  position: relative;
+  border-radius: 50%;
+  top: -2.2em;
+}

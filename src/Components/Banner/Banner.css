@@ -1,0 +1,34 @@
+.slide-1 {
+  background-image: url(https://lavella.hellodigi.ru/img/slide2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}
+.slide-2 {
+  background-image: url(https://lavella.hellodigi.ru/img/slide3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}
+.slide-3 {
+  background-image: url(https://lavella.hellodigi.ru/img/slide4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}
+
