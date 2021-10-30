@@ -4,24 +4,37 @@ import useAuth from '../../Hooks/useAuth';
 
 const TourList = () => {
   const [bookingLists, setBookingLists] = useState([]);
+  // const [isDeleted, setIsDeleted] = useState(false);
   const { user } = useAuth();
   useEffect(() => {
     fetch(`http://localhost:5000/myBookingList/${user.email}`)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setBookingLists(result);
       });
   }, [user.email]);
 
   const handleCancelBooking = (id) => {
-    console.log(id);
-    fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-      },
-    }).then();
+    const proceed = window.confirm('Are you sure, You want to delete?');
+    if (proceed) {
+      fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remainingData = bookingLists?.filter(
+              (bookList) => bookList?._id !== id
+            );
+            setBookingLists(remainingData);
+            alert('You Booking Deleted successfully');
+          }
+        });
+    }
   };
   return (
     <div>
@@ -45,7 +58,7 @@ const TourList = () => {
             </tr>
           </thead>
           {bookingLists?.map((bookList, index) => (
-            <tbody key={bookList?.packeInfo._id}>
+            <tbody key={bookList?._id}>
               <tr>
                 <td>{index + 1}</td>
                 <td>{bookList?.travelerName}</td>
@@ -54,10 +67,10 @@ const TourList = () => {
                 <td>{bookList?.bookingDate}</td>
                 <td>{bookList?.packeInfo.placeName}</td>
                 <td>$ {bookList?.packeInfo.pricing}</td>
-                <td>
+                <td className="text-danger">
                   {bookList?.status}{' '}
                   <button
-                    onClick={() => handleCancelBooking(bookList?.packeInfo._id)}
+                    onClick={() => handleCancelBooking(bookList?._id)}
                     className="btn bg-danger p-2"
                   >
                     Cancel
