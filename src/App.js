@@ -13,6 +13,7 @@ import Booking from './Components/Booking/Booking';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import TourList from './Components/TourList/TourList';
 import ManageAllTours from './Components/ManageAllTours/ManageAllTours';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>
