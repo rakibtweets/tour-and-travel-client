@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const TourDetails = () => {
   const [tourDetails, setTourDetails] = useState({});
@@ -32,6 +33,11 @@ const TourDetails = () => {
                 <p>{tourDetails.placeDescription}</p>
               </div>
             </div>
+            <Link to={`/booking/${id}`}>
+              <Button className=" destination-body" variant="outline-success">
+                Book Now
+              </Button>
+            </Link>
           </Col>
         </Row>
       </div>

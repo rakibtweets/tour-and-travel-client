@@ -11,7 +11,7 @@ const Header = () => {
         collapseOnSelect
         expand="lg"
         sticky="top"
-        className="py-3"
+        className="py-3 px-3"
         bg="dark"
         variant="dark"
       >

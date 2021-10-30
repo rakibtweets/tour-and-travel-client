@@ -11,16 +11,23 @@ const Destination = () => {
       .then((data) => setDestinations(data));
   }, []);
   return (
-    <div>
-      <h2 className=" text-center my-4">Explore Tour by Destination</h2>
+    <div className="destination-container">
+      <h1 className=" text-center fw-bold pt-5 mb-5">
+        Explore Tour by <span className=" text-success">Destination</span>
+      </h1>
 
       <Container>
+        {/* <div className=" d-flex justify-content-between my-4">
+          <h2 className=" fw-bold">
+            Popular <br /> Destinations
+          </h2>
+        </div> */}
         <Row xs={1} md={3} lg={3} className=" g-4">
           {destinations.map((destination) => (
             <Col key={destination?._id} className=" d-flex">
               <Card className="destination-card">
                 <Card.Img
-                  className=" img-fluid"
+                  className=" img-fluid place-img"
                   variant="top"
                   src={destination?.placeImg}
                 />
@@ -50,7 +57,7 @@ const Destination = () => {
                   </Link>
                   <Link to={`/booking/${destination?._id}`}>
                     <Button
-                      className=" destination-body"
+                      className=" destination-body px-3"
                       variant="outline-success"
                     >
                       Book Now
