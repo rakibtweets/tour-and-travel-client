@@ -11,7 +11,7 @@ const Destination = () => {
       .then((data) => setDestinations(data));
   }, []);
   return (
-    <div className="destination-container">
+    <div className="destination-container pb-5">
       <h1 className=" text-center fw-bold pt-5 mb-5">
         Explore Tour by <span className=" text-success">Destination</span>
       </h1>

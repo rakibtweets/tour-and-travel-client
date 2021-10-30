@@ -19,7 +19,7 @@ const Banner = () => {
               <p className=" fs-5">
                 Tokyo, night outing the city never sleeps{' '}
               </p>
-              <div className="d-flex gap-4">
+              <div className="d-flex flex-column  flex-lg-row gap-4">
                 <button className=" btn btn-warning px-4 py-2  rounded-pill">
                   Want a Personal Tour
                 </button>
@@ -30,13 +30,15 @@ const Banner = () => {
             </div>
             <div className="all-countries row g-3 container mx-auto">
               {countries.map((country) => (
-                <div className="col-2 d-flex flex-column gap-2 align-items-center">
-                  <img
-                    className=" w-25 img-fluid"
-                    src={country?.countryImg}
-                    alt=""
-                  />
-                  <h5>{country.country}</h5>
+                <div key={country._id} className="col-2">
+                  <div className="d-flex flex-column gap-2 align-items-center">
+                    <img
+                      className=" w-25 img-fluid"
+                      src={country?.countryImg}
+                      alt=""
+                    />
+                    <h5>{country.country}</h5>
+                  </div>
                 </div>
               ))}
             </div>
@@ -47,7 +49,7 @@ const Banner = () => {
             <div className=" d-flex flex-column align-items-start justify-content-center h-75 px-5">
               <h1 className="fw-bold display-3">New Zealand</h1>
               <p className=" fs-5">Beautiful country to travel </p>
-              <div className="d-flex gap-4">
+              <div className="d-flex flex-column gap-4">
                 <button className=" btn btn-success px-4 py-2  rounded-pill">
                   Want a Personal Tour
                 </button>
@@ -58,7 +60,10 @@ const Banner = () => {
             </div>
             <div className="all-countries row g-3 container mx-auto">
               {countries.map((country) => (
-                <div className="col-2 d-flex flex-column gap-2 align-items-center">
+                <div
+                  key={country._id}
+                  className="col-2 d-flex flex-column gap-2 align-items-center"
+                >
                   <img
                     className=" w-25 img-fluid"
                     src={country?.countryImg}
@@ -77,7 +82,7 @@ const Banner = () => {
               <p className=" fs-5">
                 Life become beautiful when you travel with us
               </p>
-              <div className="d-flex gap-4">
+              <div className="d-flex flex-column gap-4">
                 <button className=" btn btn-warning text-white fw-bold px-4 py-2  rounded-pill">
                   Want a Personal Tour
                 </button>
@@ -88,7 +93,10 @@ const Banner = () => {
             </div>
             <div className="all-countries row g-3 container mx-auto">
               {countries.map((country) => (
-                <div className="col-2 d-flex flex-column gap-2 align-items-center">
+                <div
+                  key={country._id}
+                  className="col-2 d-flex flex-column gap-2 align-items-center"
+                >
                   <img
                     className=" w-25 img-fluid"
                     src={country?.countryImg}
