@@ -47,7 +47,7 @@ const Destination = () => {
                       Details
                     </Button>
                   </Link>
-                  <Link to="/booking">
+                  <Link to={`/booking/${destination?._id}`}>
                     <Button
                       className=" destination-body"
                       variant="outline-primary"

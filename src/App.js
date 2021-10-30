@@ -11,6 +11,8 @@ import AddDestionation from './Components/AddDestination/AddDestionation';
 import TourDetails from './TourDetails/TourDetails';
 import Booking from './Components/Booking/Booking';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import TourList from './Components/TourList/TourList';
+import ManageAllTours from './Components/ManageAllTours/ManageAllTours';
 
 function App() {
   return (
@@ -34,7 +36,13 @@ function App() {
             <Route path="/destinations/:id">
               <TourDetails />
             </Route>
-            <PrivateRoute path="/booking">
+            <PrivateRoute path="/myTourList">
+              <TourList />
+            </PrivateRoute>
+            <Route path="/manageTours">
+              <ManageAllTours />
+            </Route>
+            <PrivateRoute path="/booking/:id">
               <Booking />
             </PrivateRoute>
             <Route path="/contact">

@@ -3,20 +3,21 @@ import { useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
-  const { signWithGoogle } = useAuth();
+  const { signWithGoogle, setUser, setError } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirectUrl = location.state?.from || '/home';
+
   const handleSignWitGoogle = () => {
     signWithGoogle()
       .then((result) => {
-        // setUser(result.user);
-        // console.log(result.user);
-        // setError('');
+        setUser(result.user);
+        console.log(result.user);
+        setError('');
         history.push(redirectUrl);
       })
       .catch((error) => {
-        // setError(error.message);
+        setError(error.message);
       });
   };
   return (

@@ -52,13 +52,6 @@ const AddDestionation = () => {
         />
         <br />
         <input
-          type="date"
-          className=" form-control"
-          placeholder="Date"
-          {...register('bookingDate', { required: true })}
-        />
-        <br />
-        <input
           type="number"
           className=" form-control"
           placeholder="Package Price"
@@ -83,7 +76,6 @@ const AddDestionation = () => {
           {...register('placeDescription', { required: true })}
         />
         <br />
-
         {errors.exampleRequired && <span>This field is required</span>}
         <br />
         <input className="btn btn-primary" type="submit" />

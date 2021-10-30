@@ -19,14 +19,6 @@ const useFirebase = () => {
   // Google Sign in
   const signWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
-    // .then((result) => {
-    //   setUser(result.user);
-    //   console.log(result.user);
-    //   setError('');
-    // })
-    // .catch((error) => {
-    //   setError(error.message);
-    // });
   };
   // handling user state changes
   useEffect(() => {
@@ -37,6 +29,7 @@ const useFirebase = () => {
         // User is signed out
         setUser({});
       }
+      setIsLoading(false);
     });
   }, [auth]);
 
@@ -61,6 +54,8 @@ const useFirebase = () => {
     isLoading,
     signWithGoogle,
     userSignOut,
+    setUser,
+    setError,
   };
 };
 export default useFirebase;
