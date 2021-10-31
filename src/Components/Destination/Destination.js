@@ -3,6 +3,7 @@ import './Destination.css';
 import { Card, Col, Container, Row, Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
+import { FaLuggageCart } from 'react-icons/fa';
 
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);
@@ -67,10 +68,10 @@ const Destination = () => {
                       </Link>
                       <Link to={`/booking/${destination?._id}`}>
                         <Button
-                          className=" destination-body px-3"
+                          className=" destination-body px-2"
                           variant="outline-success"
                         >
-                          Book Now
+                          <FaLuggageCart size="1.2em" /> Book Now
                         </Button>
                       </Link>
                     </div>
