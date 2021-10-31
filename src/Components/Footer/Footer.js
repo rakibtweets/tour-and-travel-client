@@ -31,8 +31,8 @@ const Footer = () => {
                     <Link className=" nav-link text-white" to="/home">
                       Home
                     </Link>
-                    <Link className=" nav-link text-white" to="/contact">
-                      Contact
+                    <Link className=" nav-link text-white" to="/myTourList">
+                      My Tour List
                     </Link>
                     <Link className=" nav-link text-white" to="/destination">
                       Destination

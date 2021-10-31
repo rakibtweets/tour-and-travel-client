@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import swal from 'sweetalert';
+import Fade from 'react-reveal/Fade';
 
 const TourList = () => {
   const [bookingLists, setBookingLists] = useState([]);
@@ -50,11 +51,13 @@ const TourList = () => {
     });
   };
   return (
-    <div>
-      <h3 className="fw-bold text-center text-success my-3">My tour List</h3>
-      <h5 className="fw-bold text-center text-success my-3">
+    <div className="mb-5">
+      <h2 className="fw-bold text-center text-success mt-3 mb-3">
+        My Tour List
+      </h2>
+      <h4 className="fw-bold text-center text-success my-3">
         Total planning: {bookingLists.length}
-      </h5>
+      </h4>
 
       <Container>
         <Table striped bordered hover responsive variant="light">
@@ -72,32 +75,35 @@ const TourList = () => {
           </thead>
           {bookingLists?.map((bookList, index) => (
             <tbody key={bookList?._id}>
-              <tr>
-                <td>{index + 1}</td>
-                <td>{bookList?.travelerName}</td>
-                <td>{bookList?.email}</td>
-                <td>{bookList?.address}</td>
-                <td>{bookList?.bookingDate}</td>
-                <td>{bookList?.packeInfo.placeName}</td>
-                <td className=" fw-bold">$ {bookList?.packeInfo.pricing}</td>
-                <td className=" d-flex justify-content-center align-items-center gap-3">
-                  <p
-                    className={
-                      bookList?.status === 'Pending'
-                        ? 'text-danger'
-                        : 'text-success fw-bold'
-                    }
-                  >
-                    {bookList?.status}
-                  </p>
-                  <button
-                    onClick={() => handleCancelBooking(bookList?._id)}
-                    className="btn bg-danger p-2"
-                  >
-                    Cancel
-                  </button>
-                </td>
-              </tr>
+              <Fade left cascade>
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{bookList?.travelerName}</td>
+                  <td>{bookList?.email}</td>
+                  <td>{bookList?.address}</td>
+                  <td>{bookList?.bookingDate}</td>
+                  <td>{bookList?.packeInfo.placeName}</td>
+                  <td className=" fw-bold">$ {bookList?.packeInfo.pricing}</td>
+                  <td className=" d-flex justify-content-between align-items-center gap-3">
+                    <p
+                      className={
+                        bookList?.status === 'Pending'
+                          ? 'text-danger'
+                          : 'text-success fw-bold'
+                      }
+                    >
+                      {bookList?.status}
+                    </p>
+                    <button
+                      onClick={() => handleCancelBooking(bookList?._id)}
+                      className="btn bg-danger py-2 px-3 text-white fw-bold "
+                      title="Delete"
+                    >
+                      X
+                    </button>
+                  </td>
+                </tr>
+              </Fade>
             </tbody>
           ))}
         </Table>
