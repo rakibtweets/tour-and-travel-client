@@ -28,19 +28,21 @@ const Banner = () => {
                 </button>
               </div>
             </div>
-            <div className="all-countries row g-3 container mx-auto">
-              {countries.map((country) => (
-                <div key={country._id} className="col-2">
-                  <div className="d-flex flex-column gap-2 align-items-center">
-                    <img
-                      className=" w-25 img-fluid"
-                      src={country?.countryImg}
-                      alt=""
-                    />
-                    <h5>{country.country}</h5>
+            <div className="all-countriescontainer mx-auto">
+              <div className=" row g-3 d-none d-lg-flex ">
+                {countries.slice(0, 6).map((country) => (
+                  <div key={country._id} className="col-2">
+                    <div className="d-flex flex-column gap-2 align-items-center">
+                      <img
+                        className=" w-25 img-fluid"
+                        src={country?.countryImg}
+                        alt=""
+                      />
+                      <h5>{country.country}</h5>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </Carousel.Item>
@@ -58,8 +60,8 @@ const Banner = () => {
                 </button>
               </div>
             </div>
-            <div className="all-countries row g-3 container mx-auto">
-              {countries.map((country) => (
+            <div className="all-countries row g-3 d-none d-lg-flex container mx-auto">
+              {countries.slice(0, 6).map((country) => (
                 <div
                   key={country._id}
                   className="col-2 d-flex flex-column gap-2 align-items-center"
@@ -91,8 +93,8 @@ const Banner = () => {
                 </button>
               </div>
             </div>
-            <div className="all-countries row g-3 container mx-auto">
-              {countries.map((country) => (
+            <div className="all-countries row g-3 d-none d-lg-flex container mx-auto">
+              {countries.slice(0, 6).map((country) => (
                 <div
                   key={country._id}
                   className="col-2 d-flex flex-column gap-2 align-items-center"
