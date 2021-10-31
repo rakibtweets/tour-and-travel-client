@@ -1,0 +1,9 @@
+.blogs-body {
+  background-image: url(https://lavella.hellodigi.ru/img/home4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: inherit;
+}
