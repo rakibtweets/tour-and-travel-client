@@ -36,15 +36,11 @@ const Header = () => {
                   Mange All Tour
                 </Nav.Link>
               )}
-              <Nav.Link as={Link} to="/addDestination">
-                Add Destination
-              </Nav.Link>
-              {/* <Nav.Link as={Link} to="/booking/:id">
-                Booking
-              </Nav.Link> */}
-              <Nav.Link as={Link} to="/contact">
-                Contact
-              </Nav.Link>
+              {user.email && (
+                <Nav.Link as={Link} to="/addDestination">
+                  Add Destination
+                </Nav.Link>
+              )}
             </Nav>
             {!user?.email ? (
               <Nav className="text-center">

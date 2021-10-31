@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Components/Shared/Login/Login';
 import Home from './Components/Home/Home';
 import Destination from './Components/Destination/Destination';
-import Contact from './Components/Contact/Contact';
 import AuthProvider from './Context/AuthProvider';
 import AddDestionation from './Components/AddDestination/AddDestionation';
 import TourDetails from './TourDetails/TourDetails';
@@ -48,9 +47,6 @@ function App() {
             <PrivateRoute path="/booking/:id">
               <Booking />
             </PrivateRoute>
-            <Route path="/contact">
-              <Contact />
-            </Route>
             <Route path="/login">
               <Login />
             </Route>
