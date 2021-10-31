@@ -33,9 +33,9 @@ function App() {
             <Route path="/destination">
               <Destination />
             </Route>
-            <Route path="/addDestination">
+            <PrivateRoute path="/addDestination">
               <AddDestionation />
-            </Route>
+            </PrivateRoute>
             <Route path="/destinations/:id">
               <TourDetails />
             </Route>

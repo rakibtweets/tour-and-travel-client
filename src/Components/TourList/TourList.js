@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
+import swal from 'sweetalert';
 
 const TourList = () => {
   const [bookingLists, setBookingLists] = useState([]);
@@ -15,25 +16,33 @@ const TourList = () => {
   }, [user.email]);
 
   const handleCancelBooking = (id) => {
-    const proceed = window.confirm('Are you sure, You want to delete?');
-    if (proceed) {
-      fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'content-type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            const remainingData = bookingLists?.filter(
-              (bookList) => bookList?._id !== id
-            );
-            setBookingLists(remainingData);
-            alert('You Booking Deleted successfully');
-          }
-        });
-    }
+    // confirmation alert
+    swal({
+      title: 'Are you sure?',
+      text: 'Your Booking You will be deleted',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'content-type': 'application/json',
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remainingData = bookingLists?.filter(
+                (bookList) => bookList?._id !== id
+              );
+              setBookingLists(remainingData);
+              swal('Deleted Successfully!', 'Your booking canceld', 'success');
+            }
+          });
+      }
+    });
   };
   return (
     <div>

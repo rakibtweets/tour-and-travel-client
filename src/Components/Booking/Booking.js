@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
+import swal from 'sweetalert';
 
 const Booking = () => {
   const [tourDetails, setTourDetails] = useState({});
@@ -35,7 +36,7 @@ const Booking = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert('Your Booking is confirmed');
+          swal('Congratulations!', 'Your Booking is confirmed', 'success');
           reset();
         }
       });

@@ -31,9 +31,11 @@ const Header = () => {
               <Nav.Link as={Link} to="/myTourList">
                 My Tour List
               </Nav.Link>
-              <Nav.Link as={Link} to="/manageTours">
-                Mange All Tour
-              </Nav.Link>
+              {user.email && (
+                <Nav.Link as={Link} to="/manageTours">
+                  Mange All Tour
+                </Nav.Link>
+              )}
               <Nav.Link as={Link} to="/addDestination">
                 Add Destination
               </Nav.Link>

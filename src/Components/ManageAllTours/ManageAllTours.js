@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 const ManageAllTours = () => {
   const [bookings, setBookings] = useState([]);
@@ -16,25 +17,32 @@ const ManageAllTours = () => {
 
   // handle Deleting bookings
   const handleCancelBooking = (id) => {
-    const proceed = window.confirm('Are you sure, You want to delete?');
-    if (proceed) {
-      fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'content-type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            const remainingData = bookings?.filter(
-              (bookList) => bookList?._id !== id
-            );
-            setBookings(remainingData);
-            alert('You Booking Deleted successfully');
-          }
-        });
-    }
+    swal({
+      title: 'Are you sure?',
+      text: 'Your Booking You will be deleted',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'content-type': 'application/json',
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remainingData = bookings?.filter(
+                (bookList) => bookList?._id !== id
+              );
+              setBookings(remainingData);
+              swal('Deleted Successfully!', 'Your booking canceld', 'success');
+            }
+          });
+      }
+    });
   };
 
   //handle Approve Booking
@@ -53,9 +61,8 @@ const ManageAllTours = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert('Your booking has been approved successfully');
+          swal('Approved', 'Your Booking Approved', 'success');
           setIsUpdated(true);
-          // setStatus(true);
         }
       });
   };
