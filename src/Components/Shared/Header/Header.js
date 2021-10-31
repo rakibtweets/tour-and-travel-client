@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { FaPlane } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -16,8 +17,8 @@ const Header = () => {
         variant="dark"
       >
         <Container fluid>
-          <Nav.Link as={Link} to="/home" className="fw-bold h4 text-success">
-            Tour And Travel
+          <Nav.Link as={Link} to="/home" className="fw-bold h4 text-white">
+            <FaPlane size="1.2em" /> Tour And Travel
           </Nav.Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

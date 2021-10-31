@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPlane } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -8,7 +9,11 @@ const Footer = () => {
       <div className="bg-dark text-white container-fluid text-white p-5 sticky-bottom">
         <div className="footer-info row text-white">
           <div className="col-md-6 col-12 text-center text-lg-start">
-            <h4 className="text-success fw-bold">Tour And Travel</h4>
+            <h4 className="text-white fw-bold">
+              {' '}
+              <FaPlane size="1.2em" />
+              Tour And Travel
+            </h4>
             <h6>Do You Need Help With Anything?</h6>
             <p className="text-text-white">
               Receive updates of travel information during our service

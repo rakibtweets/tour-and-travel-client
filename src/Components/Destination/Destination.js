@@ -49,7 +49,10 @@ const Destination = () => {
                     </Card.Body>
                     <div className="d-flex justify-content-around body-card">
                       <Link to={`/destinations/${destination?._id}`}>
-                        <Button className=" destination-body" variant="success">
+                        <Button
+                          className=" destination-body px-3"
+                          variant="success"
+                        >
                           Details
                         </Button>
                       </Link>
