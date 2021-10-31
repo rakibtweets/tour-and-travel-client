@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <>
-      <div className="bg-dark text-white container-fluid text-white mt-5 p-5 sticky-bottom">
+      <div className="bg-dark text-white container-fluid text-white p-5 sticky-bottom">
         <div className="footer-info row text-white">
           <div className="col-md-6 col-12 text-center text-lg-start">
             <h4 className="text-success fw-bold">Tour And Travel</h4>
