@@ -10,8 +10,8 @@ const AddDestionation = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    // console.log(data);
-    fetch('http://localhost:5000/destinations', {
+    // posting data
+    fetch('https://chilling-zombie-71515.herokuapp.com/destinations', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

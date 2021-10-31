@@ -5,7 +5,7 @@ import './Banner.css';
 const Banner = () => {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/destinations')
+    fetch('https://chilling-zombie-71515.herokuapp.com/destinations')
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);

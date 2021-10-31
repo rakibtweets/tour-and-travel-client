@@ -7,7 +7,9 @@ const TourList = () => {
   const [bookingLists, setBookingLists] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:5000/myBookingList/${user.email}`)
+    fetch(
+      `https://chilling-zombie-71515.herokuapp.com/myBookingList/${user.email}`
+    )
       .then((res) => res.json())
       .then((result) => {
         // console.log(result);
@@ -25,12 +27,15 @@ const TourList = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
-          method: 'DELETE',
-          headers: {
-            'content-type': 'application/json',
-          },
-        })
+        fetch(
+          `https://chilling-zombie-71515.herokuapp.com/deleteMyBooking/${id}`,
+          {
+            method: 'DELETE',
+            headers: {
+              'content-type': 'application/json',
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

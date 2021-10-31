@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/destinations')
+    fetch('https://chilling-zombie-71515.herokuapp.com/destinations')
       .then((res) => res.json())
       .then((data) => setDestinations(data));
   }, []);
@@ -17,11 +17,6 @@ const Destination = () => {
       </h1>
 
       <Container>
-        {/* <div className=" d-flex justify-content-between my-4">
-          <h2 className=" fw-bold">
-            Popular <br /> Destinations
-          </h2>
-        </div> */}
         <Row xs={1} md={3} lg={3} className=" g-4">
           {destinations.map((destination) => (
             <Col key={destination?._id} className=" d-flex">

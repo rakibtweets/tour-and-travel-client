@@ -5,9 +5,8 @@ import swal from 'sweetalert';
 const ManageAllTours = () => {
   const [bookings, setBookings] = useState([]);
   const [isUpdated, setIsUpdated] = useState(false);
-  // const [status, setStatus] = useState(false);
   useEffect(() => {
-    fetch('http://localhost:5000/managleAllBooking')
+    fetch('https://chilling-zombie-71515.herokuapp.com/managleAllBooking')
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -25,12 +24,15 @@ const ManageAllTours = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
-          method: 'DELETE',
-          headers: {
-            'content-type': 'application/json',
-          },
-        })
+        fetch(
+          `https://chilling-zombie-71515.herokuapp.com/deleteMyBooking/${id}`,
+          {
+            method: 'DELETE',
+            headers: {
+              'content-type': 'application/json',
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -51,13 +53,16 @@ const ManageAllTours = () => {
     const updatedBooking = bookings.find((bookList) => bookList._id === id);
     updatedBooking.status = 'Approved';
 
-    fetch(`http://localhost:5000/managleAllBooking/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updatedBooking),
-    })
+    fetch(
+      `https://chilling-zombie-71515.herokuapp.com/managleAllBooking/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updatedBooking),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

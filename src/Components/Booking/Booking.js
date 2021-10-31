@@ -10,7 +10,7 @@ const Booking = () => {
   const { user } = useAuth();
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/destinations/${id}`)
+    fetch(`https://chilling-zombie-71515.herokuapp.com/destinations/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTourDetails(data);
@@ -26,13 +26,16 @@ const Booking = () => {
     data['status'] = 'Pending';
     data.packeInfo = tourDetails;
     console.log(data);
-    fetch(`http://localhost:5000/myBookingList/${user?.email}`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://chilling-zombie-71515.herokuapp.com/myBookingList/${user?.email}`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
