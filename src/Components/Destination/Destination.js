@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import './Destination.css';
-import { Card, Col, Container, Row, Button } from 'react-bootstrap';
+import { Card, Col, Container, Row, Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);
+  const [isloading, setIsloading] = useState(true);
+
   useEffect(() => {
     fetch('https://chilling-zombie-71515.herokuapp.com/destinations')
       .then((res) => res.json())
-      .then((data) => setDestinations(data));
+      .then((data) => {
+        setDestinations(data);
+        setIsloading(false);
+      });
   }, []);
+
   return (
-    <div className="destination-container pb-5">
-      <h1 className=" text-center fw-bold pt-5 mb-5">
-        Explore Tour by <span className=" text-success">Destination</span>
-      </h1>
+    <div className="destination-container text-center pb-5">
+      {isloading && (
+        <Spinner className="mt-3" animation="border" variant="danger" />
+      )}
 
       <Container>
+        <h1 className=" text-center fw-bold pt-5 mb-5">
+          Explore Tour by <span className=" text-success">Destination</span>
+        </h1>
         <Row xs={1} md={3} lg={3} className=" g-4">
           {destinations.map((destination) => (
             <Col key={destination?._id} className=" d-block d-flex">

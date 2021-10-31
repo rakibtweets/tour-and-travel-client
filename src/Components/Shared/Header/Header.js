@@ -29,9 +29,11 @@ const Header = () => {
               <Nav.Link as={Link} to="/destination">
                 Destination
               </Nav.Link>
-              <Nav.Link as={Link} to="/myTourList">
-                My Tour List
-              </Nav.Link>
+              {user.email && (
+                <Nav.Link as={Link} to="/myTourList">
+                  My Tour List
+                </Nav.Link>
+              )}
 
               {user.email && (
                 <Nav.Link as={Link} to="/manageTours">
