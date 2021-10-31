@@ -24,19 +24,21 @@ const Register = () => {
       });
   };
   return (
-    <div className="register-container mt-5 mb-5">
-      <div className="card login-section mx-auto px-3">
-        <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
-          <h4 className="fw-bold ">Create Account With Google</h4>
-          <button
-            onClick={handleSignWitGoogle}
-            className=" btn my-3 mx-auto media-icon"
-          >
-            <FcGoogle className="fs-3 me-2" /> Sign In With Google
-          </button>
-          <p>
-            All ready have an account? <Link to="/login">Please Login</Link>
-          </p>
+    <div className="register-container">
+      <div className=" mt-5 mb-5">
+        <div className="card login-section mx-auto px-3">
+          <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
+            <h4 className="fw-bold ">Create Account With Google</h4>
+            <button
+              onClick={handleSignWitGoogle}
+              className=" btn my-3 mx-auto media-icon"
+            >
+              <FcGoogle className="fs-3 me-2" /> Sign In With Google
+            </button>
+            <p>
+              All ready have an account? <Link to="/login">Please Login</Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -23,19 +23,22 @@ const Login = () => {
       });
   };
   return (
-    <div className=" loging-container mt-5 mb-5">
-      <div className=" card login-section mx-auto px-3">
-        <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
-          <h3 className="fw-bold ">Account Login</h3>
-          <button
-            onClick={handleSignWitGoogle}
-            className=" btn my-3 mx-auto media-icon"
-          >
-            <FcGoogle className="fs-3 me-2" /> Sign In With Google
-          </button>
-          <p>
-            Don't have an account? <Link to="/register">Create an Account</Link>
-          </p>
+    <div className='login-page'>
+      <div className=" loging-container mt-5 mb-5">
+        <div className=" card login-section mx-auto px-3">
+          <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
+            <h3 className="fw-bold ">Account Login</h3>
+            <button
+              onClick={handleSignWitGoogle}
+              className=" btn my-3 mx-auto media-icon"
+            >
+              <FcGoogle className="fs-3 me-2" /> Sign In With Google
+            </button>
+            <p>
+              Don't have an account?{' '}
+              <Link to="/register">Create an Account</Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>
