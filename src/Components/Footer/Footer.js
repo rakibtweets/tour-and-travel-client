@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="copy-right text-center pt-3">
-          <p>&copy; 2021 TourAndTravel. Designd By RakibHasan.</p>
+          <p>&copy; 2021 TourAndTravel. Designd By Rakib Hasan.</p>
         </div>
       </div>
     </>

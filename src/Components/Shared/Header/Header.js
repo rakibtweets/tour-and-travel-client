@@ -31,6 +31,7 @@ const Header = () => {
               <Nav.Link as={Link} to="/myTourList">
                 My Tour List
               </Nav.Link>
+
               {user.email && (
                 <Nav.Link as={Link} to="/manageTours">
                   Mange All Tour
@@ -41,6 +42,9 @@ const Header = () => {
                   Add Destination
                 </Nav.Link>
               )}
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
+              </Nav.Link>
             </Nav>
             {!user?.email ? (
               <Nav className="text-center">

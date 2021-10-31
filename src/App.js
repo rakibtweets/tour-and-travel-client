@@ -15,6 +15,7 @@ import ManageAllTours from './Components/ManageAllTours/ManageAllTours';
 import NotFound from './Components/NotFound/NotFound';
 import Footer from './Components/Footer/Footer';
 import Register from './Components/Register/Register';
+import TravelBlogs from './Components/TravelBlogs/TravelBlogs';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
             <PrivateRoute path="/myTourList">
               <TourList />
             </PrivateRoute>
+            <Route path="/blogs">
+              <TravelBlogs />
+            </Route>
             <PrivateRoute path="/manageTours">
               <ManageAllTours />
             </PrivateRoute>
