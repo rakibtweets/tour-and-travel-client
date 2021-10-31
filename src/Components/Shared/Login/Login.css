@@ -1,10 +1,10 @@
 .login-section {
   /* background: #ffffff; */
   border: 1px solid #ababab;
-  box-sizing: border-box;
   border-radius: 4px;
-  width: 500px;
+  max-width: 70%;
   height: 400px;
+  overflow: hidden;
 }
 .media-icon {
   background-color: #ffffff;

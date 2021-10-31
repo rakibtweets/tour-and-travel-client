@@ -24,9 +24,9 @@ const Register = () => {
       });
   };
   return (
-    <div className="text-center">
-      <div className="login-section mx-auto">
-        <div className=" d-flex flex-column justify-content-center align-items-center h-75">
+    <div className="register-container mt-5">
+      <div className="card login-section mx-auto px-3">
+        <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
           <h4 className="fw-bold ">Create Account With Google</h4>
           <button
             onClick={handleSignWitGoogle}
