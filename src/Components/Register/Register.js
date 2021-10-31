@@ -24,7 +24,7 @@ const Register = () => {
       });
   };
   return (
-    <div className="register-container mt-5">
+    <div className="register-container mt-5 mb-5">
       <div className="card login-section mx-auto px-3">
         <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
           <h4 className="fw-bold ">Create Account With Google</h4>

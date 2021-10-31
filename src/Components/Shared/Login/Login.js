@@ -23,7 +23,7 @@ const Login = () => {
       });
   };
   return (
-    <div className=" loging-container mt-5">
+    <div className=" loging-container mt-5 mb-5">
       <div className=" card login-section mx-auto px-3">
         <div className=" d-flex flex-column justify-content-center align-items-center h-100 text-center">
           <h3 className="fw-bold ">Account Login</h3>
