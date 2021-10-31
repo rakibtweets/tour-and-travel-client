@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import swal from 'sweetalert';
 import Fade from 'react-reveal/Fade';
+import { FaTrash } from 'react-icons/fa';
 
 const ManageAllTours = () => {
   const [bookings, setBookings] = useState([]);
@@ -83,7 +84,7 @@ const ManageAllTours = () => {
       </h4>
       <Container>
         <Table striped bordered hover responsive variant="light">
-          <thead>
+          <thead className="text-center">
             <tr>
               <th>#</th>
               <th>Name</th>
@@ -133,7 +134,7 @@ const ManageAllTours = () => {
                         className="btn bg-danger py-2 px-3 text-white fw-bold"
                         title="Delete"
                       >
-                        X
+                        <FaTrash size="1em" />
                       </button>
                     </div>
                   </td>

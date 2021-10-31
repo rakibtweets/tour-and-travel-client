@@ -3,6 +3,7 @@ import { Container, Table } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import swal from 'sweetalert';
 import Fade from 'react-reveal/Fade';
+import { FaTrash } from 'react-icons/fa';
 
 const TourList = () => {
   const [bookingLists, setBookingLists] = useState([]);
@@ -99,7 +100,7 @@ const TourList = () => {
                       className="btn bg-danger py-2 px-3 text-white fw-bold "
                       title="Delete"
                     >
-                      X
+                      <FaTrash size="1em" />
                     </button>
                   </td>
                 </tr>
