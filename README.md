@@ -35,4 +35,4 @@
 - [React icon packed used to use icons](#react-rating)
 - [React Carousel component used in this project in reviews route](#react-carousel)
 - [Review details has been shown in reviews route](#reviews-details)
-- [if there is no availd route not found route page will open](#NotFout-route)
+- [if there is no matched route not found page will open](#NotFout-route)
